@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "pianotane",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["/Users/takagiyuki/Desktop/CladeCode/pianotane/.claude/serve.py"],
+      "runtimeExecutable": "/usr/bin/ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "--", "-p", "8765", "/Users/takagiyuki/Desktop/CladeCode/pianotane"],
       "port": 8765
     }
   ]

@@ -3,631 +3,1504 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ピアノのタネ｜黒鍵アレルギーをなくし、24調スケールへ導く教材</title>
+  <title>PTGL｜ピアノ講師のための3ヶ月オンライン伴走プログラム</title>
+  <meta name="description" content="集客できて、レッスンに自信が持てて、自分を守るルールがある。長く続くピアノ教室を3ヶ月で一緒に整えます。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* ===== Reset ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Noto Sans JP', sans-serif; color: #333; background: #fff; line-height: 1.7; font-size: 16px; }
     img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== Tokens ===== */
     :root {
-      --base: #eef6fb; --sky: #dcedf7; --sky-dark: #8fcfe6; --blue: #3aa6cc;
-      --coral: #3f9fc4; --coral-light: #dcedf7; --pink: #e6f0f8; --pink-accent: #5ab4d6;
-      --yellow: #cfe9f3; --yellow-bg: #f1f8fc; --cream: #eef6fb; --green: #8fd0c2;
-      --text: #455560; --text-light: #78858f; --white: #fff;
+      --w:          #FFFFFF;
+      --beige:      #F8F0E8;
+      --beige-mid:  #EDE0D0;
+      --salmon:     #D96B5A;
+      --salmon-s:   #E8897A;
+      --salmon-p:   #F5DDD9;
+      --gold:       #C4A26B;
+      --gold-l:     #D9C090;
+      --gold-p:     #F5EDD8;
+      --ink:        #231815;
+      --ink-m:      #5A4A42;
+      --ink-l:      #9A8A82;
+      --serif:      'Shippori Mincho', serif;
+      --sans:       'Noto Sans JP', sans-serif;
+      --script:     'Caveat', cursive;
     }
-    body { background: var(--base); }
-    .section { padding: 60px 20px; }
-    .section-inner { max-width: 720px; margin: 0 auto; }
-    .section-title { font-family: 'Zen Maru Gothic', sans-serif; font-size: 1.5rem; font-weight: 900; text-align: center; margin-bottom: 32px; line-height: 1.4; }
-    .section-title span { display: inline-block; border-bottom: 4px solid var(--coral); padding-bottom: 4px; }
-    .tag { display: inline-block; background: var(--coral); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; letter-spacing: 0.05em; }
-    .cta-btn { display: block; background: linear-gradient(135deg, #ff6b35, #f47c5a); color: #fff; text-decoration: none; font-size: 1.2rem; font-weight: 900; text-align: center; padding: 20px 24px; border-radius: 50px; box-shadow: 0 6px 20px rgba(244,124,90,0.45); transition: transform 0.2s, box-shadow 0.2s; letter-spacing: 0.05em; max-width: 480px; margin: 0 auto; }
-    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(244,124,90,0.5); }
-    .cta-btn small { display: block; font-size: 0.8rem; font-weight: 500; margin-top: 4px; opacity: 0.9; }
-    #fv { background: linear-gradient(160deg, #e8f6fd 0%, #f3f9fd 60%, #eaf5fb 100%); padding: 40px 20px 48px; text-align: center; position: relative; overflow: hidden; }
-    #fv::before { content: ''; position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; background: radial-gradient(circle, var(--sky-dark) 0%, transparent 70%); border-radius: 50%; }
-    .fv-badge { display: inline-block; background: var(--coral); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 6px 18px; border-radius: 20px; margin-bottom: 16px; letter-spacing: 0.08em; }
-    .fv-title { font-size: clamp(1.6rem, 6vw, 2.4rem); font-weight: 900; line-height: 1.35; color: #222; margin-bottom: 12px; }
-    .fv-title em { font-style: normal; color: var(--coral); }
-    .fv-subtitle { font-size: 1rem; color: var(--text-light); margin-bottom: 24px; line-height: 1.8; }
-    .fv-stats { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 20px 0 28px; }
-    .fv-stat { background: #fff; border: 2px solid var(--sky-dark); border-radius: 12px; padding: 10px 16px; text-align: center; min-width: 100px; }
-    .fv-stat strong { display: block; font-size: 1.4rem; font-weight: 900; color: var(--coral); }
-    .fv-stat span { font-size: 0.75rem; color: var(--text-light); }
-    #nayami { background: var(--pink); }
-    .nayami-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .nayami-list li { background: #fff; border-left: 5px solid var(--coral); padding: 14px 16px; border-radius: 0 10px 10px 0; font-size: 0.95rem; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    .nayami-list li::before { content: '・'; }
-    .nayami-img { margin: 28px auto 0; max-width: 400px; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-    #mirai { background: linear-gradient(160deg, var(--sky), var(--cream)); }
-    .mirai-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .mirai-list li { background: #fff; border-left: 5px solid var(--green); padding: 14px 16px; border-radius: 0 10px 10px 0; font-size: 0.95rem; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    .mirai-list li::before { content: '・'; }
-    .mirai-img { margin: 28px auto 0; max-width: 400px; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-    .mid-cta { background: linear-gradient(135deg, #eef7fc, #fff); border: 2px solid var(--coral); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 36px; }
-    .mid-cta p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 16px; }
-    #about { background: #fff; }
-    .about-concept { background: var(--sky); border-radius: 20px; padding: 28px 24px; margin-bottom: 24px; }
-    .about-concept p { font-size: 0.95rem; line-height: 1.9; }
-    .concept-flow { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 20px 0; flex-wrap: wrap; }
-    .concept-step { background: var(--coral); color: #fff; font-weight: 700; font-size: 1rem; padding: 10px 18px; border-radius: 50px; }
-    .concept-arrow { font-size: 1.4rem; color: var(--coral); }
-    .about-img { margin: 24px auto 0; max-width: 400px; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.10); }
-    #kyozai { background: var(--yellow-bg); }
-    .kyozai-spec { background: #fff; border-radius: 16px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
-    .kyozai-spec h3 { font-size: 1rem; font-weight: 700; color: var(--coral); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px dashed #fde8e0; }
-    .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .spec-item { background: var(--coral-light); border-radius: 10px; padding: 10px 12px; font-size: 0.85rem; }
-    .spec-item strong { display: block; font-size: 0.75rem; color: var(--coral); margin-bottom: 2px; }
-    .power-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
-    .power-card { background: #fff; border-radius: 14px; padding: 16px 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
-    .power-card .icon { font-size: 2rem; margin-bottom: 6px; }
-    .power-card p { font-size: 0.85rem; font-weight: 700; }
-    .flipbook { position: relative; width: min(94%, 460px); aspect-ratio: 4/3; margin: 0 auto; perspective: 1800px; cursor: pointer; user-select: none; }
-    .flipbook::before { content: ''; position: absolute; left: -6px; top: 2%; width: 14px; height: 96%; background: linear-gradient(to right, rgba(0,0,0,0.12), transparent); border-radius: 8px 0 0 8px; z-index: 0; }
-    .flip-page { position: absolute; inset: 0; transform-origin: left center; transition: transform 0.75s cubic-bezier(0.4,0.15,0.2,1); transform-style: preserve-3d; border-radius: 4px 10px 10px 4px; overflow: hidden; background: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.16); }
-    .flip-page img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; backface-visibility: hidden; }
-    .flip-page::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.18), transparent 22%); opacity: 0; transition: opacity 0.75s; pointer-events: none; }
-    .flip-page.flipped { transform: rotateY(-168deg); }
-    .flip-page.flipped::after { opacity: 1; }
-    .flip-ui { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 18px; }
-    .flip-btn { width: 40px; height: 40px; border: none; border-radius: 50%; background: var(--coral); color: #fff; font-size: 1.3rem; font-weight: 900; line-height: 1; cursor: pointer; box-shadow: 0 3px 10px rgba(63,159,196,0.4); transition: transform 0.15s, opacity 0.2s; }
-    .flip-btn:hover { transform: translateY(-2px); }
-    .flip-btn:disabled { opacity: 0.35; cursor: default; transform: none; box-shadow: none; }
-    .flip-count { font-family: 'Zen Maru Gothic', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--text-light); min-width: 52px; text-align: center; }
-    .flip-hint { font-family: 'Zen Maru Gothic', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--blue); text-align: center; margin-top: 10px; animation: flip-hint-bob 1.6s ease-in-out infinite; }
-    @keyframes flip-hint-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
-    #roadmap { background: linear-gradient(160deg, var(--cream), var(--sky)); }
-    .roadmap-intro { text-align: center; font-size: 0.9rem; color: var(--text-light); margin-bottom: 28px; }
-    .roadmap-steps { display: flex; flex-direction: column; gap: 0; position: relative; }
-    .roadmap-steps::before { content: ''; position: absolute; left: 28px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--sky-dark), var(--coral)); border-radius: 2px; }
-    .roadmap-step { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; position: relative; }
-    .step-dot { width: 58px; height: 58px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.8rem; text-align: center; color: #fff; line-height: 1.2; position: relative; z-index: 1; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-    .step-dot.s1 { background: var(--sky-dark); } .step-dot.s2 { background: var(--coral); } .step-dot.s3 { background: var(--pink-accent); }
-    .step-content { flex: 1; }
-    .step-period { display: inline-block; background: var(--coral); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
-    .step-content h3 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
-    .step-content ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
-    .step-content ul li { font-size: 0.88rem; color: var(--text-light); padding-left: 16px; position: relative; }
-    .step-content ul li::before { content: ''; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-    .roadmap-results { background: linear-gradient(135deg, #5ab4d6, #8fcfe6); color: #fff; border-radius: 20px; padding: 24px 20px; margin-top: 32px; box-shadow: 0 8px 24px rgba(90,180,214,0.30); }
-    .roadmap-results h3 { font-family: 'Zen Maru Gothic', sans-serif; font-size: 1rem; font-weight: 900; text-align: center; margin-bottom: 16px; color: #fff; }
-    .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .result-item { background: rgba(255,255,255,0.18); border-radius: 12px; padding: 12px; font-size: 0.82rem; line-height: 1.5; }
-    .result-item strong { display: block; color: #fff5d6; font-size: 0.75rem; margin-bottom: 4px; }
-    #reasons { background: #fff; }
-    .reason-list { display: flex; flex-direction: column; gap: 14px; }
-    .reason-card { display: flex; gap: 14px; align-items: flex-start; background: #f9f9f9; border-radius: 14px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .reason-num { width: 42px; height: 42px; border-radius: 50%; background: var(--coral); color: #fff; font-weight: 900; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .reason-text h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
-    .reason-text p { font-size: 0.83rem; color: var(--text-light); line-height: 1.6; }
-    .reason-img { margin: 28px auto 0; max-width: 400px; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
-    #jisseki { background: linear-gradient(160deg, var(--sky), #eaf6fb); color: var(--text); }
-    #jisseki .section-title span { border-bottom-color: var(--coral); }
-    .before-after { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
-    .ba-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
-    .ba-card-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
-    .ba-before, .ba-after { padding: 16px; }
-    .ba-before { background: var(--coral-light); } .ba-after { background: #e1eff8; }
-    .ba-label { font-size: 0.7rem; font-weight: 700; color: var(--text-light); margin-bottom: 4px; }
-    .ba-text { font-size: 0.88rem; line-height: 1.5; }
-    .ba-arrow { font-size: 1.6rem; padding: 0 4px; color: var(--coral); }
-    .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center; }
-    .stat-box { background: #fff; border-radius: 14px; padding: 16px 8px; box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
-    .stat-box strong { display: block; font-size: 1.6rem; font-weight: 900; color: var(--coral); }
-    .stat-box span { font-size: 0.72rem; color: var(--text-light); }
-    #profile { background: var(--sky); }
-    .profile-inner { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.10); }
-    .profile-img img { width: 100%; max-height: 300px; object-fit: cover; object-position: top; }
-    .profile-body { padding: 24px 20px; }
-    .profile-name { font-size: 1.2rem; font-weight: 900; margin-bottom: 4px; }
-    .profile-sub { font-size: 0.82rem; color: var(--coral); font-weight: 700; margin-bottom: 16px; }
-    .profile-text { font-size: 0.9rem; line-height: 2; color: var(--text); }
-    .profile-text + .profile-text { margin-top: 12px; }
-    #price { background: var(--yellow-bg); }
-    .price-card { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 6px 28px rgba(0,0,0,0.12); border: 3px solid var(--coral); }
-    .price-header { background: linear-gradient(135deg, var(--coral), #6ec0dd); color: #fff; text-align: center; padding: 28px 20px; }
-    .price-header h3 { font-size: 1.2rem; font-weight: 900; margin-bottom: 8px; }
-    .price-amount { font-size: 2.6rem; font-weight: 900; line-height: 1; }
-    .price-amount small { font-size: 1rem; font-weight: 400; }
-    .price-body { padding: 24px 20px; }
-    .include-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-    .include-list li { padding: 10px 14px; background: var(--coral-light); border-radius: 10px; font-size: 0.88rem; font-weight: 500; }
-    .include-list li::before { content: ' '; }
-    .conditions { background: #f5f5f5; border-radius: 12px; padding: 14px 16px; font-size: 0.82rem; color: var(--text-light); line-height: 1.9; margin-bottom: 20px; }
-    .conditions strong { color: var(--text); }
-    .price-img { margin: 0 auto 24px; max-width: 280px; }
-    #faq { background: #fff; }
-    .faq-list { display: flex; flex-direction: column; gap: 12px; }
-    .faq-item { border: 2px solid #e8e8e8; border-radius: 14px; overflow: hidden; }
-    .faq-q { background: #f9f9f9; padding: 16px; font-weight: 700; font-size: 0.9rem; cursor: pointer; display: flex; gap: 10px; align-items: flex-start; user-select: none; list-style: none; }
-    .faq-q::before { content: 'Q'; color: var(--coral); font-weight: 900; font-size: 1rem; flex-shrink: 0; }
-    .faq-q::marker { display: none; }
-    details[open] .faq-q { border-bottom: 1px solid #e8e8e8; }
-    .faq-a { padding: 16px; font-size: 0.88rem; line-height: 1.8; color: var(--text-light); }
-    .faq-a::before { content: 'A  '; color: var(--green); font-weight: 900; font-size: 1rem; }
-    #final-cta { background: linear-gradient(160deg, #e8f6fd, #eef7fc); text-align: center; padding: 60px 20px 80px; }
-    .final-img { margin: 0 auto 28px; max-width: 380px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 28px rgba(0,0,0,0.14); }
-    .final-copy { font-family: 'Zen Maru Gothic', sans-serif; font-size: 1.4rem; font-weight: 900; line-height: 1.5; margin-bottom: 8px; color: #222; }
-    .final-copy em { font-style: normal; color: var(--coral); }
-    .final-sub { font-size: 0.9rem; color: var(--text-light); margin-bottom: 28px; line-height: 1.8; }
-    .promise-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 28px; text-align: left; max-width: 320px; margin-left: auto; margin-right: auto; }
-    .promise-list li { font-size: 0.9rem; font-weight: 500; padding-left: 20px; position: relative; }
-    .promise-list li::before { content: ''; position: absolute; left: 0; font-size: 0.85rem; }
-    footer { background: #6e5d56; color: rgba(255,255,255,0.7); text-align: center; padding: 24px 20px; font-size: 0.78rem; line-height: 1.8; }
-    #opening { position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #e8f6fd 0%, #f1f8fc 55%, #e3f1f9 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; overflow: hidden; transition: opacity 0.7s ease; }
-    #opening::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(63,159,196,0.12) 2.5px, transparent 2.5px); background-size: 26px 26px; opacity: 0.7; }
-    .op-chars { display: flex; gap: clamp(8px, 4vw, 28px); align-items: flex-end; position: relative; z-index: 1; }
-    .op-char { width: clamp(72px, 22vw, 120px); height: auto; filter: drop-shadow(0 8px 12px rgba(0,0,0,0.12)); animation: op-bounce 0.9s ease-in-out infinite; transform-origin: bottom center; }
-    .op-char.c1 { animation-delay: 0s; } .op-char.c2 { animation-delay: 0.15s; } .op-char.c3 { animation-delay: 0.3s; }
-    @keyframes op-bounce { 0%, 100% { transform: translateY(0) scale(1,1); } 30% { transform: translateY(0) scale(1.08,0.92); } 55% { transform: translateY(-38px) scale(0.96,1.04); } 80% { transform: translateY(0) scale(1.05,0.95); } }
-    .op-title { position: relative; z-index: 1; text-align: center; animation: op-fadein 0.8s ease 0.2s both; }
-    .op-arc { display: inline-flex; align-items: flex-end; justify-content: center; font-family: 'Zen Maru Gothic', sans-serif; font-weight: 900; color: var(--coral); font-size: clamp(1.8rem, 8vw, 3rem); }
-    .op-arc span { display: inline-block; transform-origin: center bottom; will-change: transform; }
-    .op-title small { display: block; font-family: 'Zen Maru Gothic', sans-serif; font-size: clamp(0.85rem, 3.6vw, 1.05rem); font-weight: 700; color: var(--text-light); letter-spacing: 0.14em; margin-top: 14px; }
-    @keyframes op-fadein { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-    .op-note { position: absolute; font-size: 1.6rem; color: var(--sky-dark); opacity: 0; z-index: 0; animation: op-float 2.2s ease-in-out infinite; }
-    @keyframes op-float { 0% { opacity: 0; transform: translateY(20px) rotate(-10deg); } 40% { opacity: 0.8; } 100% { opacity: 0; transform: translateY(-60px) rotate(15deg); } }
-    #opening.hide { opacity: 0; pointer-events: none; }
-    body.op-lock { overflow: hidden; }
-    @media (prefers-reduced-motion: reduce) { .op-char, .op-note { animation: none; } }
-    @media (max-width: 480px) {
-      .fv-stat { min-width: auto; flex: 1 1 calc(50% - 6px); }
-      .results-grid { grid-template-columns: 1fr; }
-      .ba-card-inner { grid-template-columns: 1fr; }
-      .ba-arrow { transform: rotate(90deg); text-align: center; padding: 4px; }
-      .stats-row { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .stats-row .stat-box:nth-child(3) { grid-column: 1 / -1; max-width: 50%; margin: 0 auto; }
-      #final-cta { padding: 40px 20px 60px; }
+
+    body {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 2;
+      color: var(--ink-m);
+      background: var(--w);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Layout ===== */
+    .c { max-width: 640px; margin: 0 auto; padding: 0 28px; }
+
+    /* ===== Section Divider Titles ===== */
+    .sec-title {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .sec-title .label {
+      font-family: var(--script);
+      font-size: 18px;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .sec-title h2 {
+      font-family: var(--serif);
+      font-size: clamp(20px, 5vw, 28px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .rule-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .rule { flex: 1; height: 1px; background: var(--beige-mid); max-width: 80px; }
+    .rule-text {
+      font-family: var(--script);
+      font-size: 14px;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .sec-lead {
+      font-size: 14px;
+      line-height: 2.1;
+      color: var(--ink-l);
+      text-align: center;
+    }
+
+    /* ===== CTA Button ===== */
+    .btn {
+      display: block;
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 22px 28px;
+      background: linear-gradient(135deg, #D9C090, #C4A26B);
+      color: var(--w);
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 60px;
+      box-shadow: 0 6px 28px rgba(196,162,107,.32);
+      transition: transform .2s, box-shadow .2s;
+      line-height: 1.5;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(196,162,107,.42); }
+    .btn small {
+      display: block;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 300;
+      opacity: .88;
+      margin-top: 5px;
+      letter-spacing: .05em;
+    }
+    .btn-note { text-align: center; font-size: 11px; color: var(--ink-l); margin-top: 10px; letter-spacing: .05em; }
+
+    /* ===== Dark highlight box ===== */
+    .dark-box {
+      background: var(--ink);
+      color: var(--w);
+      display: inline-block;
+      padding: 4px 16px;
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    /* ===== Bokeh BG ===== */
+    .bokeh {
+      position: relative;
+      overflow: hidden;
+    }
+    .bokeh::before, .bokeh::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .bokeh::before {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(196,162,107,.08) 0%, transparent 70%);
+      top: -60px; right: -80px;
+    }
+    .bokeh::after {
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(217,107,90,.06) 0%, transparent 70%);
+      bottom: -40px; left: -40px;
+    }
+
+
+    /* =============================================
+       OPENING ANIMATION
+    ============================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(1.03); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    /* FV アニメーション */
+    .fv-hero-img {
+      animation: scaleIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .fv-cta-wrap {
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
+    }
+
+    /* スクロールアニメーション */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* =============================================
+       01 FIRST VIEW
+    ============================================= */
+    #fv {
+      background: #FDF6EF;
+    }
+    .fv-cta-wrap {
+      background: #FDF6EF;
+      padding: 32px 28px 48px;
+      text-align: center;
+    }
+    .fv-cta-wrap .btn {
+      margin-bottom: 10px;
+    }
+
+
+    /* =============================================
+       02 WORRIES
+    ============================================= */
+    .s02 { padding: 96px 0; }
+    .worry-photo-wrap {
+      margin: 0 -28px 0;
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .worry-photo {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(20%) brightness(0.95);
+    }
+    .worry-items {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 48px;
+    }
+    .worry-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(196,162,107,.15);
+    }
+    .worry-item:first-child { border-top: 1px solid rgba(196,162,107,.15); }
+    .worry-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--salmon-s);
+      flex-shrink: 0;
+      margin-top: 11px;
+    }
+    .worry-item p { font-size: 14px; line-height: 1.85; color: var(--ink-m); }
+    .worry-close {
+      text-align: center;
+      padding: 36px 0 0;
+    }
+    .worry-close p {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--ink-m);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+    .worry-close strong {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--salmon);
+      display: block;
+      line-height: 1.7;
+    }
+    .wave {
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      color: var(--gold-l);
+      letter-spacing: 4px;
+      margin-top: 8px;
+    }
+
+
+    /* =============================================
+       03 AFTER
+    ============================================= */
+    .s03 { padding: 96px 0; background: var(--w); }
+    .after-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .after-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(196,162,107,.12);
+    }
+    .after-item:first-child { border-top: 1px solid rgba(196,162,107,.12); }
+    .after-num {
+      font-family: var(--script);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--gold-l);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 36px;
+      padding-top: 4px;
+    }
+    .after-body h3 {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .after-body p { font-size: 13.5px; line-height: 2; color: var(--ink-l); }
+
+
+    /* =============================================
+       04 WHY
+    ============================================= */
+    .s04 { padding: 96px 0; background: var(--beige); }
+    .reason-list { display: flex; flex-direction: column; gap: 56px; }
+    .reason-item {}
+    .reason-label {
+      font-family: var(--script);
+      font-size: 16px;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .reason-item h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+      line-height: 1.5;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--beige-mid);
+    }
+    .reason-item p { font-size: 14px; line-height: 2.1; color: var(--ink-l); }
+    .instructor-note {
+      background: var(--w);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 16px;
+      font-size: 13px;
+      line-height: 1.95;
+      color: var(--ink-m);
+    }
+    .instructor-note strong { color: var(--ink); font-weight: 500; }
+    .gmap-img {
+      margin: 20px auto 0;
+      max-width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 20px rgba(0,0,0,.08);
+    }
+    .gmap-img img { width: 100%; }
+
+
+    /* =============================================
+       05 CURRICULUM
+    ============================================= */
+    .s05 { padding: 96px 0; }
+    .tl { position: relative; padding-left: 40px; }
+    .tl::before {
+      content: '';
+      position: absolute;
+      left: 14px;
+      top: 20px;
+      bottom: 20px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold-l), var(--beige-mid));
+    }
+    .tl-item { position: relative; padding-bottom: 48px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -33px;
+      top: 16px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: var(--w);
+      border: 1.5px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tl-dot span {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: block;
+    }
+    .tl-script {
+      font-family: var(--script);
+      font-size: 18px;
+      color: var(--salmon-s);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tl-month {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .tl-item h3 {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .tl-item p { font-size: 13.5px; line-height: 2; color: var(--ink-l); }
+    .support-box {
+      background: var(--beige);
+      border-radius: 16px;
+      padding: 32px 24px;
+      margin-top: 48px;
+    }
+    .support-box h3 {
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .support-items { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .support-items li {
+      font-size: 13.5px;
+      color: var(--ink-m);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .support-items li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      background: var(--gold-p);
+    }
+    .support-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--beige-mid);
+      font-size: 12px;
+      color: var(--ink-l);
+      line-height: 1.8;
+      text-align: center;
+    }
+
+
+    /* =============================================
+       06 INSTRUCTORS
+    ============================================= */
+    .s06 { padding: 96px 0; background: var(--beige); }
+    .inst-list { display: flex; flex-direction: column; gap: 64px; }
+    .inst-item {}
+    .inst-head {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .inst-photo {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      border: 2px solid var(--beige-mid);
+      flex-shrink: 0;
+    }
+    .inst-meta span {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: .15em;
+      color: var(--gold);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .inst-meta h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .inst-quote {
+      font-family: var(--serif);
+      font-size: 15px;
+      color: var(--ink-m);
+      padding: 4px 0 4px 16px;
+      border-left: 2px solid var(--salmon-p);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .inst-quote::before { content: '「'; color: var(--salmon); font-weight: 700; }
+    .inst-quote::after  { content: '」'; color: var(--salmon); font-weight: 700; }
+    .inst-body { font-size: 13.5px; line-height: 2.1; color: var(--ink-l); }
+
+
+    /* =============================================
+       07 VOICES
+    ============================================= */
+    .s07 { padding: 96px 0; }
+    .voice-list { display: flex; flex-direction: column; gap: 56px; }
+    .voice-item {}
+    .voice-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .voice-avatar {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--beige-mid);
+      flex-shrink: 0;
+    }
+    .voice-init {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--beige-mid);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink-l);
+      flex-shrink: 0;
+    }
+    .voice-meta h4 {
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .voice-meta span { font-size: 11px; color: var(--ink-l); }
+    .voice-headline {
+      font-family: var(--serif);
+      font-size: clamp(17px, 4.5vw, 22px);
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      padding-left: 16px;
+      border-left: 3px solid var(--salmon-s);
+      letter-spacing: .02em;
+    }
+    .voice-img {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 16px rgba(0,0,0,.07);
+    }
+    .voice-img img { width: 100%; }
+    .voice-text { font-size: 13.5px; line-height: 2; color: var(--ink-l); margin-bottom: 20px; }
+    .voice-results {
+      background: var(--beige);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+    }
+    .voice-results h5 {
+      font-size: 10px;
+      letter-spacing: .2em;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .voice-results ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .voice-results li {
+      font-size: 13px;
+      color: var(--ink-m);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .voice-results li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 9px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .voice-quote {
+      font-family: var(--serif);
+      font-size: 13.5px;
+      color: var(--ink-m);
+      border-top: 1px solid rgba(196,162,107,.2);
+      padding-top: 16px;
+      line-height: 1.9;
+    }
+    .voice-dark {
+      background: var(--ink);
+      border-radius: 16px;
+      padding: 28px 24px;
+      color: var(--w);
+    }
+    .voice-dark h4 {
+      font-family: var(--serif);
+      font-size: 13px;
+      color: var(--gold-l);
+      margin-bottom: 12px;
+      letter-spacing: .1em;
+    }
+    .voice-dark p { font-size: 13.5px; line-height: 2; color: rgba(255,255,255,.78); }
+
+
+    /* =============================================
+       08 FIT
+    ============================================= */
+    .s08 { padding: 96px 0; background: var(--beige); }
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 480px) { .fit-grid { grid-template-columns: 1fr; } }
+    .fit-box { border-radius: 14px; padding: 22px 18px; }
+    .fit-box.yes { background: var(--w); border: 1px solid rgba(217,107,90,.2); }
+    .fit-box.no  { background: #F5F4F2; border: 1px solid #E5E3DF; }
+    .fit-box h3 {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid;
+      line-height: 1.4;
+    }
+    .fit-box.yes h3 { color: var(--salmon); border-color: var(--salmon-p); }
+    .fit-box.no  h3 { color: #9A958F; border-color: #E0DDD8; }
+    .fit-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .fit-list li {
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--ink-m);
+      padding-left: 18px;
+      position: relative;
+    }
+    .fit-box.yes .fit-list li::before { content: '✓'; position: absolute; left: 0; color: var(--salmon-s); font-size: 11px; font-weight: 700; }
+    .fit-box.no  .fit-list li::before { content: '×'; position: absolute; left: 0; color: #C0B8B2; font-size: 11px; }
+    .fit-note {
+      background: var(--gold-p);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      font-size: 13px;
+      line-height: 1.95;
+      color: var(--ink-m);
+    }
+
+
+    /* =============================================
+       09 ROADMAP
+    ============================================= */
+    .s09 { padding: 96px 0; }
+    .roadmap-wrap {
+      background: var(--w);
+      border: 1px solid rgba(196,162,107,.2);
+      border-radius: 18px;
+      padding: 36px 24px;
+      margin-bottom: 24px;
+    }
+    .roadmap-wrap h3 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .roadmap-wrap p {
+      font-size: 13.5px;
+      line-height: 2;
+      color: var(--ink-l);
+      margin-bottom: 12px;
+    }
+    .sched {
+      background: var(--beige);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 20px 0;
+    }
+    .sched dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; }
+    .sched dt {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .12em;
+      color: var(--gold);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+    .sched dd { font-size: 13px; color: var(--ink-m); }
+    .price-dark {
+      background: var(--ink);
+      color: var(--w);
+      border-radius: 14px;
+      padding: 24px 22px;
+      margin: 24px 0;
+      font-size: 13.5px;
+      line-height: 1.95;
+    }
+    .price-dark h4 {
+      font-family: var(--script);
+      font-size: 18px;
+      color: var(--gold-l);
+      margin-bottom: 8px;
+    }
+    .price-dark p { color: rgba(255,255,255,.78); }
+    .zoom-wrap { border-radius: 12px; overflow: hidden; margin: 20px 0; box-shadow: 0 3px 16px rgba(0,0,0,.07); }
+    .zoom-wrap img { width: 100%; }
+    .tokuten-ttl {
+      text-align: center;
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .tokuten-script {
+      font-family: var(--script);
+      font-size: 20px;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tokuten-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 380px) { .tokuten-grid { grid-template-columns: 1fr; } }
+    .tokuten-item { text-align: center; }
+    .tokuten-item img {
+      border-radius: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    }
+    .tokuten-item strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .tokuten-item p { font-size: 11.5px; color: var(--ink-l); line-height: 1.5; }
+
+
+    /* =============================================
+       10 FAQ
+    ============================================= */
+    .s10 { padding: 96px 0; background: var(--beige); }
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid rgba(196,162,107,.18); }
+    .faq-item:first-child { border-top: 1px solid rgba(196,162,107,.18); }
+    .faq-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 20px 2px;
+      cursor: pointer;
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .faq-ql {
+      font-family: var(--script);
+      font-size: 18px;
+      color: var(--gold);
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+    .faq-arrow { margin-left: auto; flex-shrink: 0; color: var(--gold); font-size: 12px; transition: transform .3s; line-height: 28px; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 2px 20px 32px;
+      font-size: 13.5px;
+      line-height: 2;
+      color: var(--ink-l);
+    }
+    .faq-a::before { content: 'A. '; font-weight: 500; color: var(--salmon-s); }
+    .faq-item.open .faq-a { display: block; }
+
+
+    /* =============================================
+       11 CLOSING
+    ============================================= */
+    .s11 { padding: 96px 0; }
+    .closing-prose {
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 2.3;
+      color: var(--ink-m);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .closing-prose p { margin-bottom: 24px; }
+    .closing-block {
+      background: var(--beige);
+      border-radius: 18px;
+      padding: 40px 28px;
+      text-align: center;
+      margin: 0 0 40px;
+    }
+    .closing-block p {
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 2.2;
+      color: var(--ink-m);
+      margin-bottom: 20px;
+    }
+    .closing-block strong {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      display: block;
+      line-height: 1.8;
+    }
+    .closing-photo {
+      max-width: 420px;
+      margin: 0 auto 40px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 28px rgba(0,0,0,.10);
+    }
+    .closing-photo img { width: 100%; }
+    .closing-prose-end {
+      font-size: 14px;
+      line-height: 2.2;
+      color: var(--ink-l);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+
+    /* =============================================
+       CTA STRIP
+    ============================================= */
+    .cta-strip {
+      padding: 72px 0;
+      background: var(--beige);
+      text-align: center;
+    }
+    .cta-strip p {
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--ink);
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: #231815;
+      color: rgba(255,255,255,.55);
+      padding: 56px 28px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold-l);
+      letter-spacing: .25em;
+      margin-bottom: 10px;
+    }
+    .footer-info { line-height: 1.9; margin-bottom: 22px; }
+    .footer-sns { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; }
+    .footer-sns a {
+      color: rgba(255,255,255,.65);
+      font-size: 12px;
+      transition: color .2s;
+    }
+    .footer-sns a:hover { color: var(--gold-l); }
+    .footer-legal {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-legal a { color: rgba(255,255,255,.3); text-decoration: underline; font-size: 11px; }
+    .footer-legal a:hover { color: rgba(255,255,255,.55); }
+    .footer-small {
+      text-align: left;
+      margin: 24px auto 0;
+      max-width: 480px;
+      font-size: 11px;
+      color: rgba(255,255,255,.28);
+      line-height: 2;
+    }
+    .footer-small strong { color: rgba(255,255,255,.45); }
+    .footer-copy { margin-top: 24px; font-size: 10px; color: rgba(255,255,255,.18); letter-spacing: .12em; }
+
+
+    /* =============================================
+       STICKY CTA
+    ============================================= */
+    .sticky {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      padding: 10px 16px 12px;
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 -4px 24px rgba(0,0,0,.08);
+      z-index: 999;
+      backdrop-filter: blur(10px);
+    }
+    .sticky a {
+      display: block;
+      background: linear-gradient(135deg, #D9C090, #C4A26B);
+      color: var(--w);
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      padding: 13px;
+      border-radius: 50px;
+      box-shadow: 0 3px 16px rgba(196,162,107,.38);
+    }
+    @media (max-width: 599px) {
+      .sticky { display: block; }
+      body { padding-bottom: 76px; }
     }
   </style>
 </head>
-<body class="op-lock">
+<body>
 
-<div id="opening">
-  <span class="op-note" style="left:18%; top:30%; animation-delay:0s;"></span>
-  <span class="op-note" style="left:78%; top:28%; animation-delay:0.5s;"></span>
-  <span class="op-note" style="left:30%; top:62%; animation-delay:1s; color:var(--coral);"></span>
-  <span class="op-note" style="left:68%; top:64%; animation-delay:1.4s; color:var(--green);"></span>
-  <div class="op-chars">
-    <img class="op-char c1" src="sozai/char_donguri.png" alt="どんぐり">
-    <img class="op-char c2" src="sozai/char_mikan.png" alt="みかん">
-    <img class="op-char c3" src="sozai/char_lemon.png" alt="レモン">
+<!-- ======================================================
+     01｜FIRST VIEW
+====================================================== -->
+<section id="fv">
+  <img src="images/fv-hero.png" alt="PTGL｜ピアノ講師のための集客×導入×教室運営を3ヶ月で整えるオンライン伴走プログラム" class="fv-hero-img" loading="eager">
+  <div class="fv-cta-wrap">
+    <a href="https://lin.ee/R0086Br" class="btn" target="_blank" rel="noopener">
+      無料ロードマップ作成会に参加する
+      <small>↓ 公式LINEへ登録する</small>
+    </a>
   </div>
-  <p class="op-title"><span class="op-arc" data-arc="ピアノのタネ"></span><small>わかる → できる → 楽しい！</small></p>
+</section>
+
+
+<!-- ======================================================
+     02｜WORRIES
+====================================================== -->
+<section class="s02 bokeh">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">for piano teachers</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">こんなお悩みありませんか？</span><div class="rule"></div></div>
+      <p class="sec-lead">「先生、少しは自分のことも大切にしてください」<br>そう言われても、どうしたらいいかわからない。<br>そんな先生へ、まず聞いてください。</p>
+    </div>
+
+    <div class="worry-items reveal reveal-delay-2">
+      <div class="worry-item"><span class="worry-dot"></span><p>振替レッスンのお願いを断れず、気づけば自分の予定がどんどん後回しになっている</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>月謝を見直したいと思いながらも「辞められたらどうしよう」が頭をよぎって言い出せない</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>保護者との関係を大切にしたいからこそ、必要以上に気を使って疲れてしまう</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>教室のルールが曖昧なため、その都度対応が変わり、モヤモヤを抱えている</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>集客のためにSNSを毎日更新しているけれど、正直もう疲れ果てている</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>問い合わせが来ない月があると、この先も教室を続けられるのか不安になる</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>幼児や導入期のレッスンで「これで合っているのかな」と自信が持てず、毎回反省を繰り返している</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>レッスンは大好きなのに、教室運営のことを考えると気持ちが重くなる</p></div>
+      <div class="worry-item"><span class="worry-dot"></span><p>「生徒のために」と頑張ってきたはずなのに、いつの間にか自分の心と時間が削られている</p></div>
+    </div>
+
+    <div class="worry-close">
+      <p>それは、あなたが<strong>優しすぎる</strong>からです。</p>
+      <strong>でも、優しい先生のままで、<br>長く続けられる教室にできます。</strong>
+      <span class="wave">〜〜〜〜〜〜〜</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     03｜AFTER
+====================================================== -->
+<section class="s03">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">after 3 months</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">3ヶ月後、こんな変化が起きています。</span><div class="rule"></div></div>
+    </div>
+
+    <div class="after-list">
+      <div class="after-item reveal reveal-delay-1">
+        <span class="after-num">01</span>
+        <div class="after-body">
+          <h3>集客の不安がなくなる</h3>
+          <p>SNSを毎日更新しなくても、価値観の合うご家庭から自然に問い合わせが届くようになります。Googleマップが、あなたの教室の「看板」として24時間働いてくれます。</p>
+        </div>
+      </div>
+      <div class="after-item">
+        <span class="after-num">02</span>
+        <div class="after-body">
+          <h3>レッスンに自信が持てる</h3>
+          <p>「これで合っているのかな」という迷いが減り、幼児でも安心して導入レッスンができるようになります。保護者の前でも、落ち着いて「この子はこう育ちます」と伝えられるようになります。</p>
+        </div>
+      </div>
+      <div class="after-item">
+        <span class="after-num">03</span>
+        <div class="after-body">
+          <h3>保護者対応のモヤモヤが消える</h3>
+          <p>振替・月謝・お休みの連絡。すべて教室ルールとして整えることで、「私が我慢すればいい」という場面がぐっと減ります。</p>
+        </div>
+      </div>
+      <div class="after-item">
+        <span class="after-num">04</span>
+        <div class="after-body">
+          <h3>心と時間に余白が生まれる</h3>
+          <p>自分や家族との時間を後回しにしなくていい。先生自身が心穏やかにレッスンできることが、生徒の未来にもつながります。</p>
+        </div>
+      </div>
+      <div class="after-item">
+        <span class="after-num">05</span>
+        <div class="after-body">
+          <h3>「続けてきてよかった」と思える</h3>
+          <p>価値観の合うご家庭とのご縁に恵まれ、生徒の成長を見守る喜びを感じながら、10年先も続けられる教室経営の形が見えてきます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     04｜WHY PTGL
+====================================================== -->
+<section class="s04">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">why PTGL</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">PTGLが選ばれる理由</span><div class="rule"></div></div>
+      <p class="sec-lead">理論だけを教えるコンサルとは、ここが違います。</p>
+    </div>
+
+    <div class="reason-list">
+      <div class="reason-item reveal reveal-delay-1">
+        <span class="reason-label">reason 01</span>
+        <h3>現役講師2名が伴走するから</h3>
+        <p>50名以上の生徒が通う教室を10年以上継続してきた、現役ピアノ講師2名がサポートします。「現場でいま実践していること」をそのままお伝えするので、明日のレッスンからすぐに使えます。</p>
+        <div class="instructor-note">
+          <strong>高木ゆき</strong>｜Googleマップから年間25件以上の問い合わせを獲得。広告費0円で5ヶ月待ちの教室を運営中。<br><br>
+          <strong>今村あさみ</strong>｜入会率99％を維持しながら「3ヶ月で両手奏」を目指す再現性の高い導入指導を実践中。
+        </div>
+        <div class="gmap-img">
+          <img src="images/googlemap-review.png" alt="Googleマップ口コミ（個人名はぼかし処理済み）" loading="lazy">
+        </div>
+      </div>
+      <div class="reason-item">
+        <span class="reason-label">reason 02</span>
+        <h3>集客・指導・運営を同時に整えられるから</h3>
+        <p>教室が安定しない理由は、どれか一つが欠けているからです。集客だけ学んでも、指導に自信がなければ生徒は続きません。指導が良くても、運営ルールがなければ先生が疲弊します。PTGLでは、この3つを連動させながら一度に整えていきます。</p>
+      </div>
+      <div class="reason-item">
+        <span class="reason-label">reason 03</span>
+        <h3>あなたの教室に合わせたオーダーメイドだから</h3>
+        <p>どんなご家庭に来てほしいか。どんな規模で続けたいか。先生一人ひとりの生活スタイルや理想の未来は違います。だからPTGLは、型にはめるのではなく、あなたの教室に合わせた形で伴走します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     05｜CURRICULUM
+====================================================== -->
+<section class="s05">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">curriculum</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">3ヶ月カリキュラム</span><div class="rule"></div></div>
+      <p class="sec-lead">3ヶ月で、教室の土台を丸ごと整えます。</p>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-dot"><span></span></div>
+        <span class="tl-script">month 1</span>
+        <div class="tl-month">1ヶ月目｜担当：高木ゆき</div>
+        <h3>集客の土台づくり</h3>
+        <p>Googleマップを「ただ登録するだけ」で終わらせません。あなたの理念・強み・どんなご家庭に来てほしいかを言語化し、価値観の合うご家庭に自然と見つけてもらえる教室ページを一緒に完成させます。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><span></span></div>
+        <span class="tl-script">month 2</span>
+        <div class="tl-month">2ヶ月目｜担当：今村あさみ</div>
+        <h3>体験〜導入レッスンを整える</h3>
+        <p>「体験レッスン、どう進めればいいんだろう」その迷いをなくします。指導案の添削・声かけのコツ・興味づけの方法まで、年少さんでも3ヶ月で両手奏を目指せる再現性の高いメソッドをお伝えします。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"><span></span></div>
+        <span class="tl-script">month 3</span>
+        <div class="tl-month">3ヶ月目｜担当：高木ゆき＋今村あさみ</div>
+        <h3>教室運営を仕組み化する</h3>
+        <p>振替・月謝・お休みの連絡……曖昧なままにしてきたルールを、この月に一気に整えます。教室規約・公式LINEのリッチメニューなど、先生を守る仕組みをあなたの教室スタイルに合わせてオーダーメイドで作ります。</p>
+      </div>
+    </div>
+
+    <div class="support-box">
+      <h3>サポート内容</h3>
+      <ul class="support-items">
+        <li>毎月Zoomセッション1回（60〜90分・講師2名同席）</li>
+        <li>LINEでの質問対応：3ヶ月間無制限</li>
+        <li>各月に合わせた課題・添削フィードバック</li>
+        <li>完全オンライン・全国どこからでも受講可能</li>
+      </ul>
+      <p class="support-note">Zoomセッションには高木・今村の2名が同席します。<br>集客と指導、両方の専門家から意見をもらえるのがPTGLだけの強みです。</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     06｜INSTRUCTORS
+====================================================== -->
+<section class="s06">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">instructors</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">講師紹介</span><div class="rule"></div></div>
+      <p class="sec-lead">かつての私たちも、あなたと同じ場所で悩んでいました。</p>
+    </div>
+
+    <div class="inst-list">
+      <div class="inst-item reveal reveal-delay-1">
+        <div class="inst-head">
+          <img src="images/profile-takagi.jpg" alt="高木ゆき" class="inst-photo">
+          <div class="inst-meta">
+            <span>集客・運営担当</span>
+            <h3>高木ゆき</h3>
+          </div>
+        </div>
+        <p class="inst-quote">生徒が辞めたらどうしよう</p>
+        <p class="inst-body">その不安から、無理な振替にも応じ、断れないまま自分の時間を削り続けていました。そんな私が変わったきっかけは、Googleマップを「集客ツール」としてではなく、「教室の想いを伝える場所」として整えたことでした。<br><br>今では広告費0円で5ヶ月待ちとなり、電車や車で遠方から理念に共感して通ってくださるご家庭に恵まれています。</p>
+      </div>
+
+      <div class="inst-item">
+        <div class="inst-head">
+          <img src="images/profile-imamura.jpg" alt="今村あさみ" class="inst-photo">
+          <div class="inst-meta">
+            <span>導入指導担当</span>
+            <h3>今村あさみ</h3>
+          </div>
+        </div>
+        <p class="inst-quote">自分の指導力が足りないのかもしれない</p>
+        <p class="inst-body">生徒が思うように育たないたびに、そう悩み続けていました。試行錯誤の中から生まれたのが、「3ヶ月で両手奏」を目指す再現性の高い導入メソッドです。<br><br>今では入会率99％を維持しながら、生徒の「できた！」と先生の「これでいいんだ」を同時に増やすレッスンを届けています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     CTA STRIP
+====================================================== -->
+<div class="cta-strip">
+  <div class="c">
+    <p>まずは無料で、<br>あなたの教室の現在地を一緒に整理してみませんか。</p>
+    <a href="https://lin.ee/R0086Br" class="btn" target="_blank" rel="noopener">
+      無料ロードマップ作成会に参加する
+      <small>↓ 公式LINEへ登録する</small>
+    </a>
+  </div>
 </div>
 
-<section id="fv" style="padding:0; background:#fff;">
-  <img src="sozai/tanefirst2_nobtn.png" alt="ピアノのタネ ファーストビュー" style="width:100%; display:block;">
-</section>
 
-<section id="nayami" class="section">
-  <div class="section-inner">
-    <p class="tag">こんな悩み、ありませんか？</p>
-    <h2 class="section-title"><span>生徒の「あるある」<br>見てみてください</span></h2>
-    <ul class="nayami-list">
-      <li>黒鍵になると手が止まってしまう</li>
-      <li>調号が増えると急に苦戦する</li>
-      <li>スケールになかなかつながらない</li>
-      <li>説明してもなかなか伝わらない</li>
-      <li>発達差があって対応が難しい</li>
-      <li>練習が受け身で、自分から弾かない</li>
-    </ul>
-    <div class="nayami-img">
-      <img src="sozai/kao3.jpg" alt="先生が生徒に指導している様子">
+<!-- ======================================================
+     07｜VOICES
+====================================================== -->
+<section class="s07">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">voice</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">受講生の声</span><div class="rule"></div></div>
+      <p class="sec-lead">先生たちの教室が、こう変わりました。</p>
     </div>
-  </div>
-</section>
 
-<section id="mirai" class="section">
-  <div class="section-inner">
-    <p class="tag">「ピアノのタネ」を使うと</p>
-    <h2 class="section-title"><span>生徒がこう変わります</span></h2>
-    <ul class="mirai-list">
-      <li>黒鍵を怖がらなくなる</li>
-      <li>自分で違和感に気づけるようになる</li>
-      <li>自分で考えて弾けるようになる</li>
-      <li>自発的にピアノへ向かうようになる</li>
-      <li>スケールへ自然につながっていく</li>
-    </ul>
-    <div class="mirai-img">
-      <img src="sozai/kao2.jpg" alt="先生と生徒が笑顔でレッスン">
-    </div>
-    <div class="mid-cta">
-      <p>この変化を、あなたの教室でも起こしませんか？</p>
-      <a href="ここに貼る" class="cta-btn">今すぐ申し込む<small>モニター価格 39,800円（税込）・詳細は下記参照</small></a>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <div class="section-inner">
-    <p class="tag">コンセプト</p>
-    <h2 class="section-title"><span>ピアノのタネとは</span></h2>
-    <div class="about-concept">
-      <p>「黒鍵アレルギーを作りたくない」<br>「調感覚を体で覚えてほしい」<br>「先生に言われる前に、自分で気づいてほしい」<br><br>18年間の現場指導で感じたその思いから、<br>「ピアノのタネ」は生まれました。</p>
-    </div>
-    <div class="concept-flow">
-      <span class="concept-step">わかる</span>
-      <span class="concept-arrow">→</span>
-      <span class="concept-step">できる</span>
-      <span class="concept-arrow">→</span>
-      <span class="concept-step">楽しい！</span>
-    </div>
-    <p style="text-align:center; font-size:0.88rem; color:var(--text-light); margin-top:12px;">この流れを、幼児でも体験できる教材設計です。</p>
-    <div class="about-img"><img src="sozai/hyoshi2.png" alt="教材を使うレッスン風景"></div>
-  </div>
-</section>
-
-<section id="kyozai" class="section">
-  <div class="section-inner">
-    <p class="tag">教材内容</p>
-    <h2 class="section-title"><span>何が入っている教材？</span></h2>
-    <div class="kyozai-spec">
-      <h3>教材仕様</h3>
-      <div class="spec-grid">
-        <div class="spec-item"><strong>ページ数</strong>オールカラー 20ページ</div>
-        <div class="spec-item"><strong>形式</strong>製本教材（実物）</div>
-        <div class="spec-item"><strong>対象年齢</strong>3歳〜小学生</div>
-        <div class="spec-item"><strong>使用期間</strong>1〜2年</div>
-        <div class="spec-item"><strong>使い方</strong>辞書のように繰り返し使える</div>
-        <div class="spec-item"><strong>特典</strong>指導動画・指導案（完成次第配信）</div>
-      </div>
-    </div>
-    <h3 style="font-size:1rem; font-weight:700; margin-bottom:14px; color:var(--text);">この教材で育つ力</h3>
-    <div class="power-grid">
-      <div class="power-card"><div class="icon"></div><p>黒鍵への理解</p></div>
-      <div class="power-card"><div class="icon"></div><p>調感覚の育成</p></div>
-      <div class="power-card"><div class="icon"></div><p>自発性・主体性</p></div>
-      <div class="power-card"><div class="icon"></div><p>スケール準備</p></div>
-    </div>
-    <h3 style="font-size:1rem; font-weight:700; margin-bottom:12px; color:var(--text); text-align:center;">教材サンプル</h3>
-    <div class="flipbook" id="flipbook" aria-label="教材サンプルのページめくり">
-      <div class="flip-page"><img src="sozai/hyoshi.JPG" alt="教材表紙"></div>
-      <div class="flip-page"><img src="sozai/hyoshi3.png" alt="ピアノに置いた教材"></div>
-      <div class="flip-page"><img src="sozai/hyoshi2.png" alt="レッスンで使用中"></div>
-    </div>
-    <div class="flip-ui">
-      <button type="button" class="flip-btn" id="flipPrev" aria-label="前のページ">‹</button>
-      <span class="flip-count"><span id="flipNow">1</span> / <span id="flipTotal">3</span></span>
-      <button type="button" class="flip-btn" id="flipNext" aria-label="次のページ">›</button>
-    </div>
-    <p class="flip-hint"> ページをめくってみてね</p>
-  </div>
-</section>
-
-<section id="roadmap" class="section">
-  <div class="section-inner">
-    <h2 class="section-title"><span>導入後の<br>成長ロードマップ</span></h2>
-    <p class="roadmap-intro">「うちの生徒にもできそう」を感じてください</p>
-    <div class="roadmap-steps">
-      <div class="roadmap-step">
-        <div class="step-dot s1">3〜<br>6ヶ月</div>
-        <div class="step-content">
-          <span class="step-period">導入後 3〜6ヶ月</span>
-          <h3>黒鍵への恐怖がなくなる</h3>
+    <div class="voice-list">
+      <!-- K先生 -->
+      <div class="voice-item">
+        <div class="voice-head">
+          <div class="voice-init">K</div>
+          <div class="voice-meta">
+            <h4>K先生（兵庫県・ピアノ講師）</h4>
+            <span>受講生の声</span>
+          </div>
+        </div>
+        <p class="voice-headline">「規約という盾を手に入れたことで、<br>自信を持って生徒の前に立てるようになりました。」</p>
+        <div class="voice-img">
+          <img src="images/beforeafter.png" alt="K先生のビフォーアフター" loading="lazy">
+        </div>
+        <p class="voice-text">受講前は、振替や月謝のことを言い出せず、ずっとモヤモヤを抱えたままでした。PTGLを通じて、教室運営を「仕組み」として捉え直せるようになり、今では生徒や保護者との関係を大切にしながら、自分自身も守れる教室運営ができています。</p>
+        <div class="voice-results">
+          <h5>3ヶ月で起きた変化</h5>
           <ul>
-            <li>黒鍵を怖がらなくなる</li>
-            <li>年中でもハ長調〜ロ長調の伴奏づけができる</li>
-            <li>自分から鍵盤に触れるように</li>
+            <li>口コミが0件から1ヶ月で6件に増加</li>
+            <li>一人では6時間かかるGoogleマップ登録が、伴走により45分で完了</li>
+            <li>教室規約が完成し、対人ストレスが大きく減った</li>
+            <li>月謝改定と働き方の見直しを実現</li>
           </ul>
         </div>
+        <p class="voice-quote">「一人では言語化できなかった理念が、伴走してもらうことで45分で完成しました。先生方の言葉に何度も救われました。」</p>
       </div>
-      <div class="roadmap-step">
-        <div class="step-dot s2">6ヶ月<br>〜1年</div>
-        <div class="step-content">
-          <span class="step-period">導入後 6ヶ月〜1年</span>
-          <h3>自分で考えて弾けるように</h3>
-          <ul>
-            <li>黒鍵が出ても止まらない</li>
-            <li>指くぐりができる</li>
-            <li>自分で違和感に気づける</li>
-          </ul>
+
+      <!-- C先生 -->
+      <div class="voice-item">
+        <div class="voice-head">
+          <div class="voice-init">C</div>
+          <div class="voice-meta">
+            <h4>C先生（ピアノ講師・指導歴30年）</h4>
+            <span>お茶会参加者の声</span>
+          </div>
         </div>
+        <p class="voice-headline">「インスタの毎日更新を<br>やめる決断ができました。」</p>
+        <p class="voice-text">30年のキャリアがあっても、教室規約は一度も作ったことがなく、集客はInstagramの毎日更新だけに頼っていました。正直、吐きそうになりながら続けていました。<br><br>PTGLのお茶会に参加して初めて、Googleマップというストック型の集客があることを知り、規約の必要性を腑に落ちる形で理解できました。今は価値観の合うご家庭に選んでもらえる教室づくりに、迷わず集中できています。</p>
       </div>
-      <div class="roadmap-step">
-        <div class="step-dot s3">1年<br>〜2年</div>
-        <div class="step-content">
-          <span class="step-period">導入後 1〜2年</span>
-          <h3>スケールへの土台が完成</h3>
-          <ul>
-            <li>スケール本へ進む準備が整う</li>
-            <li>調感覚が身についている</li>
-            <li>ハノン・全調スケール&アルペジオへ進める</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center; margin:20px 0 8px;">
-      <img src="sozai/ピアノのタネLP素材/1.png" alt="ピアノのタネ ステップアップ図" style="max-width:360px; margin:0 auto; border-radius:12px;">
-    </div>
-    <div class="roadmap-results">
-      <h3>実際の生徒さんの成長実績</h3>
-      <div class="results-grid">
-        <div class="result-item"><strong>年中スタートの生徒</strong>1年で指くぐりができるように</div>
-        <div class="result-item"><strong>小学生の生徒</strong>半年で指くぐり達成</div>
-        <div class="result-item"><strong>小学生の生徒</strong>1年でスケール本へ進む</div>
-        <div class="result-item"><strong>50名中40名以上</strong>が24調スケールへ進んでいます</div>
-      </div>
-    </div>
 
-    <!-- 音大・ハノン実績ブロック -->
-    <div style="background:#fff8f0; border-left:4px solid #e8a000; padding:18px 20px; margin-top:20px; border-radius:0 12px 12px 0;">
-      <p style="font-weight:700; color:#b86000; margin-bottom:10px;"> この教材の"前身"から育った生徒たち</p>
-      <ul style="list-style:none; padding:0; line-height:2.2; font-size:0.9rem;">
-        <li> 音大進学を目指すレベルまで成長した生徒が誕生</li>
-        <li> ハノン・全調スケール＆アルペジオへ進んだ生徒が複数</li>
-        <li> 「黒鍵が怖くない」土台が、本格的な演奏技術につながった</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="reasons" class="section">
-  <div class="section-inner">
-    <p class="tag">選ばれる理由</p>
-    <h2 class="section-title"><span>他の教材とは<br>ここが違います</span></h2>
-    <div class="reason-list">
-      <div class="reason-card"><div class="reason-num">1</div><div class="reason-text"><h3>18年間の現場経験から生まれた</h3><p>机上の理論ではなく、実際に50名以上を指導してきた経験が全ページに凝縮されています。</p></div></div>
-      <div class="reason-card"><div class="reason-num">2</div><div class="reason-text"><h3>幼児でも自分で理解できる設計</h3><p>3歳からでも使えるビジュアル中心の構成。先生が説明する前に「わかった！」が生まれます。</p></div></div>
-      <div class="reason-card"><div class="reason-num">3</div><div class="reason-text"><h3>黒鍵アレルギーを作らない</h3><p>黒鍵を恐怖体験にさせない独自アプローチ。学習の早い段階で黒鍵に慣れさせます。</p></div></div>
-      <div class="reason-card"><div class="reason-num">4</div><div class="reason-text"><h3>自発性が自然に育つ</h3><p>受け身の練習から脱却。「もっと弾きたい」という気持ちを引き出す設計です。</p></div></div>
-      <div class="reason-card"><div class="reason-num">5</div><div class="reason-text"><h3>24調スケール〜音大レベルへの土台</h3><p>50名中40名以上が24調スケールへ。前身プリントからはハノン・全調スケール&アルペジオへ進んだ生徒、音大進学を目指す生徒も誕生しています。</p></div></div>
-      <div class="reason-card"><div class="reason-num">6</div><div class="reason-text"><h3>発達差にも対応しやすい</h3><p>学習速度や理解度が違う生徒にも、辞書のように使えるので無理なく対応できます。</p></div></div>
-    </div>
-    <div class="reason-img"><img src="sozai/kao4.jpg" alt="複数の生徒にレッスンする様子"></div>
-  </div>
-</section>
-
-<section id="jisseki" class="section">
-  <div class="section-inner">
-    <p class="tag" style="background:var(--pink-accent);">実績・変化</p>
-    <h2 class="section-title"><span>生徒のBefore → After</span></h2>
-    <div class="before-after">
-      <div class="ba-card"><div class="ba-card-inner"><div class="ba-before"><div class="ba-label">BEFORE</div><div class="ba-text">黒鍵で手が止まってしまう</div></div><div class="ba-arrow">→</div><div class="ba-after"><div class="ba-label">AFTER</div><div class="ba-text">黒鍵を外したら<strong>自分で気づく</strong></div></div></div></div>
-      <div class="ba-card"><div class="ba-card-inner"><div class="ba-before"><div class="ba-label">BEFORE</div><div class="ba-text">先生の説明を待つだけ</div></div><div class="ba-arrow">→</div><div class="ba-after"><div class="ba-label">AFTER</div><div class="ba-text"><strong>自分で考えて</strong>弾ける</div></div></div></div>
-      <div class="ba-card"><div class="ba-card-inner"><div class="ba-before"><div class="ba-label">BEFORE</div><div class="ba-text">調号が増えると苦戦する</div></div><div class="ba-arrow">→</div><div class="ba-after"><div class="ba-label">AFTER</div><div class="ba-text">スケール本へ<strong>スムーズに進む</strong></div></div></div></div>
-    </div>
-    <div class="stats-row">
-      <div class="stat-box"><strong>18年</strong><span>ピアノ指導歴</span></div>
-      <div class="stat-box"><strong>50名+</strong><span>指導生徒数</span></div>
-      <div class="stat-box"><strong>80%+</strong><span>が24調スケールへ</span></div>
-    </div>
-    <div style="margin-top:28px; background:#fff; border-radius:14px; padding:20px; font-size:0.85rem; line-height:1.9; color:var(--text-light); box-shadow:0 3px 12px rgba(0,0,0,0.06);">
-      <strong style="color:var(--coral); display:block; margin-bottom:8px;">保護者の声（随時追加予定）</strong>
-      ご購入いただいた先生方・保護者の方からの声を順次掲載予定です。<br>
-      現時点での実績として、50名中40名以上が24調スケールへ進んでいます。
-    </div>
-  </div>
-</section>
-
-<section id="profile" class="section">
-  <div class="section-inner">
-    <p class="tag">講師プロフィール</p>
-    <h2 class="section-title"><span>作った人について</span></h2>
-    <div class="profile-inner">
-      <div class="profile-img"><img src="sozai/yuki.jpg" alt="講師プロフィール写真"></div>
-      <div class="profile-body">
-        <h3 class="profile-name">ゆき先生</h3>
-        <p class="profile-sub">ピアノ講師 / 指導歴18年</p>
-        <p class="profile-text">子どもの頃、私自身も「黒鍵が怖い」「調号がわからない」という経験をしました。わからないのに先に進む、その苦しさを知っているからこそ——</p>
-        <p class="profile-text">「この子の前で、同じ壁を作りたくない」<br>そう思いながら18年間、50名以上の生徒と向き合ってきました。</p>
-        <p class="profile-text">何度も試行錯誤を重ねて生まれたのが「ピアノのタネ」です。<br>わかる→できる→楽しい、この順番を全ての子どもに体験させてあげたいと思っています。</p>
+      <!-- 実績 -->
+      <div class="voice-dark">
+        <h4>高木自身の教室での実績</h4>
+        <p>理念をGoogleマップに言語化して反映したことで、近所の方だけでなく「電車や車を使ってでも通いたい」という遠方のご家庭が集まるように。体験レッスンジプシーや軽い気持ちの問い合わせが激減し、最初から共感してくださっているご家庭とだけ出会えるようになりました。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ⑩ 料金・申込（修正版） ===== -->
-<section id="price" class="section">
-  <div class="section-inner">
-    <p class="tag">料金・お申込み</p>
-    <h2 class="section-title"><span>ご購入について</span></h2>
 
-    <div class="price-card">
-      <div class="price-header">
-        <p style="font-size:0.8rem; background:rgba(255,255,255,0.25); display:inline-block; padding:4px 16px; border-radius:20px; margin-bottom:12px; font-weight:700; letter-spacing:0.08em;">モニター価格</p>
-        <h3>ピアノのタネ 導入セット</h3>
-        <div class="price-amount">¥39,800<small>（税込・送料込）</small></div>
-        <p style="font-size:0.82rem; margin-top:10px; opacity:0.9;">先生1名分の導入価格です</p>
-      </div>
-      <div class="price-body">
-        <div class="price-img">
-          <img src="sozai/hyoshi.JPG" alt="ピアノのタネ 教材" style="border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,0.12);">
-        </div>
+<!-- ======================================================
+     08｜FIT
+====================================================== -->
+<section class="s08">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">is PTGL for you?</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">向いている先生・向いていない先生</span><div class="rule"></div></div>
+    </div>
 
-        <h3 style="font-size:0.95rem; font-weight:700; margin:0 0 12px; color:var(--coral);"> 導入セットに含まれるもの</h3>
-        <ul class="include-list">
-          <li>ピアノのタネ 本体（オールカラー20ページ・製本）× 1冊</li>
-          <li>指導動画（完成次第、購入者限定で無料配信）</li>
-          <li>指導案・ノウハウ（完成次第、購入者限定で無料配信）</li>
-          <li>今後のアップデート案内</li>
+    <div class="fit-grid reveal reveal-delay-1">
+      <div class="fit-box yes">
+        <h3>向いている先生</h3>
+        <ul class="fit-list">
+          <li>誠実で生徒思いだけど、自分を後回しにしがちな先生</li>
+          <li>SNS集客に疲れて、別の方法を探している先生</li>
+          <li>幼児・導入期のレッスンにもっと自信を持ちたい先生</li>
+          <li>振替・月謝などの運営ルールを整えたいと思っている先生</li>
+          <li>10年先も笑顔で教え続けられる教室にしたい先生</li>
+          <li>スマートフォンやZoomを使った経験がある先生</li>
         </ul>
+      </div>
+      <div class="fit-box no">
+        <h3>向いていない先生</h3>
+        <ul class="fit-list">
+          <li>今すぐ爆発的に生徒数を増やしたい先生</li>
+          <li>心身ともにギリギリで、新しいことに取り組む余裕がない先生</li>
+          <li>デジタルツールに触れる意欲がない先生</li>
+          <li>Googleマップをまだ登録していない先生</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fit-note">
+      PTGLは、「先生が安心して、長く、笑顔で続けられること」を大切にしています。人数を追うより、質を大切にしたい先生のためのプログラムです。
+    </div>
+  </div>
+</section>
 
-        <!-- 追加テキスト案内 -->
-        <div style="background:linear-gradient(135deg,#eef7fc,#fff); border:2px solid var(--sky-dark); border-radius:16px; padding:18px 16px; margin-bottom:20px;">
-          <h3 style="font-size:0.95rem; font-weight:700; color:var(--blue); margin-bottom:10px;"> 生徒さん用テキストの追加購入</h3>
-          <p style="font-size:0.88rem; line-height:1.8; margin-bottom:14px;">導入セットには先生用テキスト1冊が含まれています。<br>担当する生徒さんの人数分は、<strong>1冊2,200円（税込）</strong>で追加購入いただけます。</p>
-          <div style="background:#fff; border-radius:10px; padding:12px 14px; font-size:0.88rem; line-height:1.9; margin-bottom:12px;">
-            <strong style="color:var(--coral);">追加テキスト　¥2,200 / 冊（税込）</strong><br>
-            <span style="color:var(--text-light); font-size:0.8rem;">※導入後いつでも追加注文OK・まとめ注文も可</span>
-          </div>
-          <div style="background:#f0f8fc; border-radius:10px; padding:14px; font-size:0.82rem; line-height:2; color:var(--text-light);">
-            <strong style="color:var(--text);"> 計算例：生徒10名の教室</strong><br>
-            導入セット　¥39,800<br>
-            追加テキスト　¥2,200 × 10冊 ＝ ¥22,000<br>
-            <span style="display:block; border-top:1px solid #c0dcea; margin-top:8px; padding-top:8px; color:var(--text); font-weight:700;">合計　¥61,800</span>
-          </div>
-        </div>
 
-        <div class="conditions">
-          <strong>ご利用条件</strong><br>
-          ・生徒1人につき1冊ご購入ください<br>
-          ・コピーでの複製はご遠慮ください
-        </div>
+<!-- ======================================================
+     09｜ROADMAP
+====================================================== -->
+<section class="s09 bokeh">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">free session</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">無料ロードマップ作成会</span><div class="rule"></div></div>
+      <p class="sec-lead">まず、あなたの教室の「今」を一緒に整理しませんか。</p>
+    </div>
 
-        <div class="conditions" style="background:#e8f4f8; border-left:4px solid var(--sky-dark);">
-          <strong>お支払い・送料について</strong><br>
-          送料込みの価格です。クレジットカード・銀行振込・コンビニ払いがご利用いただけます。
-        </div>
+    <div class="roadmap-wrap reveal reveal-delay-1">
+      <h3>無料ロードマップ作成会とは？</h3>
+      <p>「自分の教室、何から手をつければいいのかわからない」そんな先生のために、講師2名とオンラインで一緒に考える無料の作成会です。</p>
+      <p>あなたの教室の現在地を洗い出し、集客・指導・運営のどこから整えるべきかが、この1時間でクリアになります。参加後には「<strong>教室洗い出しPDF</strong>」もプレゼントします。</p>
+      <div class="sched">
+        <dl>
+          <dt>形式</dt><dd>Zoomオンライン（全国どこからでも参加可）</dd>
+          <dt>所要時間</dt><dd>約90分</dd>
+          <dt>進め方</dt><dd>現状ヒアリング → 課題整理 → 次の一歩のご提案</dd>
+          <dt>担当</dt><dd>高木ゆき・今村あさみ（2名同席）</dd>
+          <dt>参加費</dt><dd><strong style="color:var(--salmon);">無料</strong></dd>
+          <dt>開催日</dt><dd>2025年7月末（公式LINEにて日程をご案内します）</dd>
+        </dl>
+      </div>
+      <div class="zoom-wrap">
+        <img src="images/zoom-session.jpg" alt="Zoomオンラインセッションのようす" loading="lazy">
+      </div>
+    </div>
 
-        <h3 style="font-size:1rem; font-weight:700; margin:20px 0 14px; color:var(--text);">申込から受け取りまでの流れ</h3>
-        <div style="background:#f9f9f9; border-radius:14px; padding:16px; font-size:0.88rem; line-height:2;">
-          <p><strong>STEP 1：申し込み</strong><br>下のボタンから申込フォームへ進みます。</p>
-          <p style="margin-top:10px;"><strong>STEP 2：入金確認</strong><br>ご入金後、確認メールをお送りします。</p>
-          <p style="margin-top:10px;"><strong>STEP 3：発送 ＋ 動画・指導案お届け</strong><br>テキストは入金後5営業日以内に発送。指導動画・指導案は完成次第、メールにてお届けします。</p>
-        </div>
+    <div class="price-dark">
+      <h4>price</h4>
+      <p>3ヶ月プログラムの詳細な料金は、ロードマップ作成会にてご案内しています。お支払いは一括または分割（クレジットカード）に対応しています。<br><small style="opacity:.6;font-size:.9em;">※分割払いの場合、クレジットカード会社所定の手数料がかかります。</small></p>
+    </div>
 
-        <div style="background:#fff8f0; border-left:4px solid #e8a000; border-radius:0 10px 10px 0; padding:14px 16px; margin:20px 0; font-size:0.82rem; line-height:1.9;">
-          <strong style="color:#b86000;">モニター価格について</strong><br>
-          現在はモニター価格での販売です。正式販売時は価格が変わる可能性があります。今お申し込みいただいた方には、完成した動画・指導案を優先的にお届けします。
-        </div>
+    <div class="tokuten-ttl">
+      <span class="tokuten-script">present</span>
+      公式LINE登録でプレゼント
+    </div>
+    <div class="tokuten-grid">
+      <div class="tokuten-item">
+        <img src="images/tokuten-video.png" alt="特典動画サムネイル" loading="lazy">
+        <strong>特典① 動画プレゼント</strong>
+        <p>「生徒50名超・10年続く教室の共通点」高木・今村が動画でお伝えします。</p>
+      </div>
+      <div class="tokuten-item">
+        <img src="images/tokuten-pdf.png" alt="教室洗い出しメモ" loading="lazy">
+        <strong>特典② 教室洗い出しPDF</strong>
+        <p>手を動かしながら使えるワークシート。作成会で活用できます。</p>
+      </div>
+    </div>
 
-        <a href="ここに貼る" class="cta-btn">
-          申し込みフォームへ進む
-          <small>ご不明な点はお気軽にお問い合わせください</small>
-        </a>
+    <a href="https://lin.ee/R0086Br" class="btn" target="_blank" rel="noopener">
+      公式LINEに登録して、ロードマップ作成会に参加する
+      <small>登録後、日程案内が届きます</small>
+    </a>
+    <p class="btn-note">無料・完全オンライン</p>
+  </div>
+</section>
+
+
+<!-- ======================================================
+     10｜FAQ
+====================================================== -->
+<section class="s10">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">FAQ</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">よくある質問</span><div class="rule"></div></div>
+    </div>
+
+    <div class="faq-list reveal reveal-delay-1">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>生徒数が少なくても参加できますか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">はい、もちろんです。生徒数は関係ありません。「今の状況を変えたい」という気持ちがあれば大丈夫です。むしろ、早い段階で土台を整えることで、その後の教室経営がぐっとラクになります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>Googleマップに詳しくなくても大丈夫ですか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">大丈夫です。操作方法から一緒に進めていきます。スマートフォンが使えて、LINEやZoomを使ったことがあれば問題ありません。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>完全オンラインで受けられますか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">はい、全てZoomとLINEで完結します。全国どこからでも受講いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>忙しくても続けられますか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">月1回のZoomセッション（60〜90分）と、LINEでの質問対応（無制限）が基本です。毎日課題があるようなプログラムではありませんので、レッスンの合間や空き時間に進めていただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>規約を作ると保護者との関係が悪くなりませんか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">むしろ逆です。ルールが明確になることで、保護者も安心して通い続けられます。「言いにくいことをルールとして伝えられる」ことで、先生自身の対人ストレスも大きく減ります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>SNSをやめても集客できますか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">はい。Googleマップはストック型の集客です。一度整えれば、毎日投稿しなくても検索した方に見つけてもらえます。「やめても大丈夫な状態」を作ることを目指します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>料金はいくらですか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">3ヶ月プログラムの料金は、ロードマップ作成会にてご案内しています。一括払いと分割払い（クレジットカード）に対応しています。まずは無料の作成会でお気軽にご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>キャンセルや返金はできますか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">お申し込み後のキャンセル・返金はお受けしておりません。ご不明な点はロードマップ作成会にてご確認いただき、納得された上でご検討ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>Googleマップをまだ登録していませんが大丈夫ですか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">プログラムは「登録済み」の状態からのスタートを基本としています。未登録の方はロードマップ作成会にてご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span class="faq-ql">Q.</span>ベテラン講師でも参加できますか？<span class="faq-arrow">▼</span></div>
+        <div class="faq-a">はい、もちろんです。指導歴30年の先生が「初めて規約の必要性を腑に落ちる形で理解できた」とおっしゃっています。経験があるからこそ、新しい視点が大きな変化につながることがあります。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== ⑪ FAQ（修正版） ===== -->
-<section id="faq" class="section">
-  <div class="section-inner">
-    <p class="tag">よくある質問</p>
-    <h2 class="section-title"><span>FAQ</span></h2>
-    <div class="faq-list">
 
-      <details class="faq-item">
-        <summary class="faq-q">幼児でも使えますか？</summary>
-        <p class="faq-a">はい、3歳から使えるよう設計されています。ビジュアル中心の構成なので、ひらがなが読めなくても理解できます。実際に年中さんからご使用いただいており、1年で指くぐりができるようになった事例もあります。</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">発達特性がある生徒にも使えますか？</summary>
-        <p class="faq-a">対応しやすい設計です。辞書のように繰り返し使えるため、学習ペースや理解度に合わせて柔軟に使うことができます。画像やキャラクターを用いた視覚的なアプローチが、様々な特性を持つ子に有効です。</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">スケールが苦手な生徒でも大丈夫ですか？</summary>
-        <p class="faq-a">はい。この教材は「スケールへの土台を作る」ことが目的です。黒鍵・調感覚・指くぐりを段階的に身につけることで、スケール学習がスムーズになります。スケールが苦手な段階の生徒にこそ、お勧めします。</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">他の教材と併用できますか？</summary>
-        <p class="faq-a">可能です。現在お使いのテキストや教材と並行してご使用いただけます。辞書的な使い方ができるので、特定のタイミングに応じてピンポイントで活用することもできます。</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">生徒全員分の料金がかかりますか？</summary>
-        <p class="faq-a">いいえ。導入セット（39,800円）は先生1名分です。生徒さん用テキストは1冊2,200円（税込）で追加購入いただけます。まず導入セットでお試しいただき、必要な冊数を追加いただく形です。追加注文はいつでもOKです。</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">指導動画・指導案はいつ受け取れますか？</summary>
-        <p class="faq-a">現在制作中です。完成次第、お申し込みいただいた先生へ順次お届けします。モニター価格でお申し込みいただいた方には優先的にご案内します。追加費用は一切かかりません。</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">コピーして複数の生徒に使えますか？</summary>
-        <p class="faq-a">コピーでのご利用はお断りしております。生徒1人につき1冊のご購入をお願いしています。生徒さん用は1冊2,200円で追加購入いただけますので、ぜひご利用ください。</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q">送料・支払方法は？</summary>
-        <p class="faq-a">送料は価格に含まれています（送料込み）。お支払いはクレジットカード・銀行振込・コンビニ払いがご利用いただけます。</p>
-      </details>
-
+<!-- ======================================================
+     11｜CLOSING
+====================================================== -->
+<section class="s11 bokeh">
+  <div class="c">
+    <div class="sec-title reveal">
+      <span class="label">to you</span>
+      <div class="rule-wrap"><div class="rule"></div><span class="rule-text">ここまで読んでくださったあなたへ。</span><div class="rule"></div></div>
     </div>
-  </div>
-</section>
 
-<section id="final-cta">
-  <div class="section-inner">
-    <div class="final-img"><img src="sozai/kao.jpg" alt="笑顔でピアノを弾く子どもたち"></div>
-    <h2 class="final-copy"><em>わかる</em>から、<em>できる</em>へ。<br><em>できる</em>から、<em>楽しい</em>へ。<br>そして——<em>自分から</em>弾く。</h2>
-    <p class="final-sub">音楽を一生楽しめる力を、<br>あなたの教室から育てていきませんか。</p>
-    <ul class="promise-list">
-      <li>黒鍵を怖がらなくなる</li>
-      <li>自分で考えて弾けるようになる</li>
-      <li>スケールへの土台が育つ</li>
-      <li>音楽を一生楽しめる力がつく</li>
-    </ul>
-    <a href="ここに貼る" class="cta-btn" style="margin-bottom:16px;">
-      今すぐ申し込む
-      <small>モニター価格 39,800円（税込・送料込）</small>
+    <div class="closing-prose reveal reveal-delay-1">
+      <p>きっと今、こんなことを感じているのではないでしょうか。<br>「このままではいけない気がする」<br>「もっと心地よい教室にしたい」<br>「先生を続けることが、こんなに苦しいはずじゃなかった」</p>
+      <p>生徒のために頑張ることは、素晴らしいことです。<br>でも「私が我慢すればいい」という教室運営を、ずっと続けなくていいのです。</p>
+    </div>
+
+    <div class="closing-block reveal reveal-delay-2">
+      <p>
+        先生自身が笑顔でレッスンできること。<br>
+        自分や家族との時間を大切にできること。<br>
+        価値観の合うご家庭とのご縁に恵まれ、<br>
+        生徒の成長を見守る喜びを感じながら教室を続けられること。
+      </p>
+      <strong>
+        それは、わがままではありません。<br>
+        それが、先生が長く続けられる教室の正体です。
+      </strong>
+    </div>
+
+    <p class="closing-prose-end">
+      そしてそれは、生徒の未来のためにもなります。<br>
+      笑顔の先生のそばで、子どもたちは音楽を好きになるのですから。<br><br>
+      PTGLは、そんな未来を目指す先生のための3ヶ月伴走プログラムです。<br>
+      まずは、一緒に「あなたの教室の今」を整理してみませんか。
+    </p>
+
+    <div class="closing-photo reveal reveal-delay-3">
+      <img src="images/closing-photo.jpg" alt="高木ゆき・今村あさみ" loading="lazy">
+    </div>
+
+    <a href="https://lin.ee/R0086Br" class="btn" target="_blank" rel="noopener">
+      公式LINEに登録して、ロードマップ作成会に参加する
+      <small>先生が笑顔で続けられる教室づくりの第一歩を踏み出す</small>
     </a>
-    <p style="font-size:0.78rem; color:var(--text-light); margin-top:16px;">ご不明な点はお気軽にお問い合わせください</p>
+    <p class="btn-note">無料・完全オンライン</p>
   </div>
 </section>
 
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
 <footer>
-  <p>© ピアノのタネ　All Rights Reserved.</p>
-  <p style="margin-top:6px;">本教材のコピー・無断転載はお断りしております。</p>
+  <div class="footer-logo">PTGL</div>
+  <p class="footer-info">
+    Piano Teachers Growth Lab<br>
+    高木ゆき・今村あさみ｜所在地：大阪府
+  </p>
+  <div class="footer-sns">
+    <a href="https://www.instagram.com/ptgl_official" target="_blank" rel="noopener">📷 @ptgl_official</a>
+    <a href="https://lin.ee/R0086Br" target="_blank" rel="noopener">💬 公式LINE 登録はこちら</a>
+  </div>
+  <div class="footer-legal">
+    <a href="#tokushoho">特定商取引法に基づく表記</a>
+    <a href="#cancel">キャンセルポリシー</a>
+  </div>
+  <div class="footer-small" id="tokushoho">
+    <strong>特定商取引法に基づく表記</strong><br>
+    販売事業者：高木ゆき・今村あさみ（Piano Teachers Growth Lab）<br>
+    所在地：大阪府（詳細はお問い合わせください）<br>
+    お問い合わせ：公式LINEよりご連絡ください<br><br>
+    <strong id="cancel">キャンセルポリシー</strong><br>
+    お申し込み後のキャンセル・返金はお受けしておりません。
+  </div>
+  <p class="footer-copy">© 2025 PTGL Piano Teachers Growth Lab. All rights reserved.</p>
 </footer>
 
+
+<!-- ======================================================
+     STICKY CTA
+====================================================== -->
+<div class="sticky">
+  <a href="https://lin.ee/R0086Br" target="_blank" rel="noopener">無料ロードマップ作成会に参加する →</a>
+</div>
+
 <script>
-  (function () {
-    var arcs = document.querySelectorAll('.op-arc[data-arc]');
-    arcs.forEach(function (el) {
-      var text = el.getAttribute('data-arc');
-      var chars = Array.from(text);
-      var n = chars.length;
-      var amp = 22; var maxRot = 16;
-      el.textContent = '';
-      chars.forEach(function (ch, i) {
-        var t = n > 1 ? (i / (n - 1)) * 2 - 1 : 0;
-        var y = amp * (1 - t * t);
-        var rot = maxRot * t;
-        var s = document.createElement('span');
-        s.textContent = ch;
-        s.style.transform = 'translateY(' + y.toFixed(1) + 'px) rotate(' + rot.toFixed(1) + 'deg)';
-        el.appendChild(s);
-      });
+  function toggleFaq(el) {
+    el.parentElement.classList.toggle('open');
+  }
+
+  // スクロールアニメーション
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-  })();
+  }, { threshold: 0.12 });
 
-  (function () {
-    var opening = document.getElementById('opening');
-    if (!opening) return;
-    var DURATION = 2600;
-    function close() {
-      opening.classList.add('hide');
-      document.body.classList.remove('op-lock');
-      setTimeout(function () { if (opening && opening.parentNode) opening.parentNode.removeChild(opening); }, 800);
-    }
-    opening.addEventListener('click', close);
-    window.addEventListener('load', function () { setTimeout(close, DURATION); });
-    setTimeout(close, DURATION + 2500);
-  })();
-
-  (function () {
-    var book = document.getElementById('flipbook');
-    if (!book) return;
-    var pages = Array.prototype.slice.call(book.querySelectorAll('.flip-page'));
-    var N = pages.length;
-    var prevBtn = document.getElementById('flipPrev');
-    var nextBtn = document.getElementById('flipNext');
-    var nowEl = document.getElementById('flipNow');
-    var totalEl = document.getElementById('flipTotal');
-    var cur = 0;
-    if (totalEl) totalEl.textContent = N;
-    function render() {
-      pages.forEach(function (p, i) { var flipped = i < cur; p.classList.toggle('flipped', flipped); p.style.zIndex = flipped ? i : (100 - i); });
-      if (nowEl) nowEl.textContent = cur + 1;
-      if (prevBtn) prevBtn.disabled = (cur === 0);
-      if (nextBtn) nextBtn.disabled = (cur >= N - 1);
-    }
-    function next() { if (cur < N - 1) { cur++; render(); } }
-    function prev() { if (cur > 0) { cur--; render(); } }
-    book.addEventListener('click', function (e) { var r = book.getBoundingClientRect(); if (e.clientX - r.left < r.width / 2) prev(); else next(); });
-    if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); next(); });
-    if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prev(); });
-    render();
-  })();
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
